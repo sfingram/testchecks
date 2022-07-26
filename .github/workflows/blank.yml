@@ -24,3 +24,5 @@ jobs:
           repo: testchecks
           name: "Snarf"
           head_sha: ${{ github.sha }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
