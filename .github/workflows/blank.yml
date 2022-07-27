@@ -17,9 +17,9 @@ jobs:
     steps:
       - name: GitHub API Request
         uses: octokit/request-action@v2.1.0
-        id: create_check_suite
+        id: create_check_run
         with:
-          route: POST /repos/{owner}/{repo}/check-suites
+          route: POST /repos/{owner}/{repo}/check-runs
           owner: sfingram
           repo: testchecks
           name: "Snarf"
