@@ -36,8 +36,9 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v3
       - name: Run a slow thing
         run: |
           sleep 10
-          awk '/foo/ {sum += 1}; /bar/ { sum += 1 }; END { if (sum != 1) exit 1 }'
+          awk '/foo/ {sum += 1}; /bar/ { sum += 1 }; END { if (sum != 1) exit 1 }' < testfile.txt
           echo Passed slowstuff
