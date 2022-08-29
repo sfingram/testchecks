@@ -39,4 +39,5 @@ jobs:
       - name: Run a slow thing
         run: |
           sleep 10
+          awk '/foo/ {sum += 1}; /bar/ { sum += 1 }; END { if (sum != 1) exit 1 }'
           echo Passed slowstuff
